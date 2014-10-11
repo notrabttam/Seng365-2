@@ -1,0 +1,15 @@
+https://github.com/chriskacerguis/codeigniter-restserver
+
+Database
+- Polls
+    + id < key
+    + title
+    + question
+- Answers
+    + id < key
+    + pollid < foreign key
+    + answer
+- Responses
+    + id < key
+    + answerid < foreign key
+    + ip

@@ -1,0 +1,5 @@
+<div ng-repeat="poll in polls">
+    <a href="#/polls/{{poll.id}}">{{poll.title}}</a>
+    <span>{{poll.question}}</span>
+    <a href="#/results/{{poll.id}}">Results</a>
+</div>
