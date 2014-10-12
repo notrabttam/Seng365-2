@@ -1,8 +1,11 @@
 <div>
-    <h1>{{poll.title}}</h1>
-    <h2>{{poll.question}}</h2>
-    <ul ng-repeat="answer in poll.answers">
-        <li><a ng-click="vote(poll.id, $index)" href="">{{answer}}</a></li>
-    </ul>
+    <h2 class="center">{{poll.title}}</h2>
+    <h4 class="center">{{poll.question}}</h4>
+    <div class="answers center" ng-repeat="answer in poll.answers">
+        <span class="answer"><a ng-click="vote(poll.id, $index)" href="">{{answer}}</a></span>
+    </div>
+</div>
+<div class="footerUrls center">
+    <a href="#/polls">Polls home</a>
     <a href="#/results/{{poll.id}}">Show results</a>
 </div>

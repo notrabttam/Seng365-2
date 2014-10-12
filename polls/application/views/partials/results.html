@@ -1,8 +1,11 @@
-<h1>Responses for poll {{poll.title}}</h1>
-<h2>Question: {{poll.question}}</h2>
-<div ng-repeat="i in indexes">
-    {{poll.answers[i]}} {{results[i]}}
+<h2 class="center">Responses for poll {{poll.title}}</h2>
+<h4 class="center">Question: {{poll.question}}</h4>
+<div class="response" ng-repeat="i in indexes">
+    <span class="name" style="font-size: {{fontSize(results[i])}}px;">{{poll.answers[i]}}</span>
+    <span class="count" style="font-size: {{fontSize(results[i])}}px;">{{results[i]}}</span>
 </div>
-<a ng-click="reset(poll.id)">Reset votes</a>
-<a href="#/polls/{{poll.id}}">Back to poll</a>
-<a href="#/polls">Poll home</a>
+<div class="footerUrls center">
+    <a href="#/polls">Polls home</a>
+    <a href="#/polls/{{poll.id}}">Back to poll</a>
+    <a ng-click="reset(poll.id)" href="#/polls/{{poll.id}}">Reset votes</a>
+</div>

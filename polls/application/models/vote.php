@@ -6,8 +6,8 @@ class Vote extends CI_Model {
     public $question;
     
     public function getVotes($pollid) {
-        // Gets counts for each answer in the given poll
-        $query = $this->db->query("select answerid, count(*) as count from Responses where pollid=$pollid group by answerid");
+        // Gets counts for each answer in the given poll; escaping param' to protect against SQL injection.
+        $query = $this->db->query("select answerid, count(*) as count from Responses where pollid=".$this->db->escape($pollid)." group by answerid");
         $rows = $query->result();
         $answeridCounts = array();
         foreach ($rows as $row) {
@@ -62,5 +62,5 @@ class Vote extends CI_Model {
     public function deleteVotes($pollid) {
         $this->db->delete("Responses", array('pollid' => $pollid));
     }
-};
+}
 

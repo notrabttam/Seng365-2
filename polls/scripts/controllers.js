@@ -56,6 +56,18 @@
                         "Successfully deleted responses to " + $scope.poll.title);
             });
         });
+        
+        $scope.fontSize = (function(voteCount) {
+            var size = 15;
+            size = size + voteCount;
+            if (size > 30) {
+                return 30;
+            }
+            else {
+                return size;
+            }
+        });
+        
         changeTitle("Results");
     }]);
     
@@ -82,7 +94,7 @@
             "onclick": null,
             "showDuration": "300",
             "hideDuration": "1000",
-            "timeOut": "5000",
+            "timeOut": "3000",
             "extendedTimeOut": "1000",
             "showEasing": "swing",
             "hideEasing": "linear",
